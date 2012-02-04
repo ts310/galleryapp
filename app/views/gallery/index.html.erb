@@ -1,0 +1,12 @@
+<div id="gallery" class="gallery">
+</div>
+
+<script type="javascript/template" id="gallery_index">
+  {{#models}}
+  <div class="photo">
+    <div class="image">
+      <img src="{{attributes.images.low_resolution.url}}" alt="{{id}}" />
+    </div>
+  </div>
+  {{/models}}
+</script>
