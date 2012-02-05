@@ -2,20 +2,59 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.gallery {
-  padding: 10px;
-  background: #eee;
-  .photo {
-    width: 300px;
-    height: 300px;
-    background: #000;
-    margin: 0 0 10px;
-    .image {  
-      opacity: 0;
-      -webkit-transition: all 1s ease-in-out; 
-      img {
-        display: block;
-      }
+body {
+  padding:0;
+  margin:0;
+  background:#333;
+  -webkit-user-select:none;
+  -webkit-text-size-adjust:none;
+  color:#eee;
+  font-family:helvetica;
+  font-size:12px;
+}
+
+.slides {
+	width:100%;
+	min-width:320px;
+	height:340px;
+  div > div {
+    position:relative;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    overflow:hidden;
+    img {
+      width:270px;
+      height:270px;
+      display:block;
+      border:5px solid #eee;
+      -webkit-box-shadow:0 2px 6px #000;
+      -webkit-border-radius:2px;
+      -webkit-transition-duration:.4s;
+      -webkit-transition-property:opacity;
+      opacity:1;
+      pointer-events:none;
     }
   }
+
+  div > .swipeview-loading {
+    background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#555)),
+      -webkit-gradient(linear, 0 0, 100% 0, from(#777), to(#777));
+    background-position:50% 50%, 50% 50%;
+    background-size:200px 140px, 210px 150px;
+    background-repeat:no-repeat;
+  }
+
+  div > .swipeview-loading img,
+  #swipeview-slider img.loading {
+    -webkit-transition-duration:0;
+    opacity:0;
+  }
+
+  div > .swipeview-loading span {
+    -webkit-transition-duration:0;
+    -webkit-transform:translate3d(0,100%,0);
+  }
 }
+
